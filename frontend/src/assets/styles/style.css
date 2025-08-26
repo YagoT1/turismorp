@@ -1,0 +1,12 @@
+/* src/assets/styles/style.css */
+.hero-section {
+  @apply bg-blue-900 text-white py-16 px-4 text-center;
+}
+
+.section-title {
+  @apply text-3xl font-bold mb-4;
+}
+
+.section-content {
+  @apply max-w-4xl mx-auto text-lg;
+}

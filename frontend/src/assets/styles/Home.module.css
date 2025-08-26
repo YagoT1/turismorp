@@ -1,0 +1,132 @@
+/* Home.module.css */
+/* Este archivo puede contener estilos específicos para el Home, como el fondo general y animaciones personalizadas. */
+.homeContainer {
+  background-color: #0d1117; /* Un gris oscuro casi negro, similar a GitHub */
+}
+
+.heroSection {
+  background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #21262d 100%);
+  background-size: 200% 200%;
+  animation: heroGradient 20s ease infinite;
+  position: relative;
+  overflow: hidden; /* Oculta cualquier desbordamiento dentro del hero */
+}
+
+@keyframes heroGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animatedBgOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Utiliza un filtro para un efecto más sutil o patrón */
+    filter: brightness(0.8) grayscale(0.2); /* Sutil efecto visual */
+    z-index: 0; /* Asegura que esté detrás del contenido */
+    animation: pulseBackground 30s infinite alternate;
+    opacity: 0.1; /* Muy sutil */
+}
+
+@keyframes pulseBackground {
+    0% { transform: scale(1); opacity: 0.1; }
+    50% { transform: scale(1.05); opacity: 0.15; }
+    100% { transform: scale(1); opacity: 0.1; }
+}
+
+
+/* Animaciones de entrada para el contenido */
+/* Animate up */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Animate in from left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+/* Animate in from right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+/* Animate in from top */
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideInDown {
+  animation: slideInDown 0.8s ease-out forwards;
+}
+
+/* Simple fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+
+/* Retrasos para animaciones escalonadas */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+/* Puedes añadir más delays si necesitas más elementos escalonados */
+
+/* Asegurarse de que las animaciones solo se ejecuten una vez o con control via JS/Intersection Observer */
+/* No aplicar globalmente, solo para elementos específicos cuando entren en vista */
+
