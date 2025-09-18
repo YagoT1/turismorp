@@ -1,6 +1,8 @@
 /* index.css */
 /* Fuentes globales */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
 
 @tailwind base;
 @tailwind components;
@@ -36,6 +38,7 @@ body {
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-smoothing: grayscale;
+  scroll-behavior: smooth;
 }
 a {
   color: inherit;
@@ -70,4 +73,19 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.rmli-modal-container {
+  z-index: 9999 !important;
+}
+
+.rmli-modal-container::after {
+  background: rgba(0, 0, 0, 0.8);
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
 }

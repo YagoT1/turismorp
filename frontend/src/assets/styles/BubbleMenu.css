@@ -1,0 +1,75 @@
+/* src/assets/styles/BubbleMenu.css */
+
+/* Contenedor del menú: Posicionamiento para que las burbujas se desplieguen desde aquí */
+.bubble-menu-container {
+    position: absolute;
+    top: 50%; /* Mantén esto para que el punto de anclaje sea el centro vertical */
+    right: 20px; /* Ajusta la distancia desde el borde derecho del contenedor padre */
+    transform: translateY(-50%); /* Ajuste para centrar el contenedor del menú */
+    z-index: 40;
+    pointer-events: none;
+}
+
+/* Burbujas individuales: Estilos base y estado oculto */
+.bubble-menu-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    background-color: #002D62;
+    color: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+    /* Asegúrate de que los textos dentro de las burbujas estén centrados y bien visibles */
+    text-align: center;
+    font-size: 0.75rem; /* Ajuste para el texto */
+}
+
+/* Estado del menú abierto: La clase 'open' se añade con React */
+.bubble-menu-container.open .bubble-menu-item {
+    pointer-events: auto;
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Animación de despliegue de derecha a izquierda en un arco más estético */
+/* He ajustado los valores de translate (X e Y) y los delays para un efecto más circular y suave */
+.bubble-menu-container.open .bubble-menu-item:nth-child(1) {
+    transform: translate(-90px, 0px) scale(1); /* Primer elemento más cerca horizontalmente */
+    transition-delay: 0.05s;
+}
+
+.bubble-menu-container.open .bubble-menu-item:nth-child(2) {
+    transform: translate(-150px, 20px) scale(1); /* Ligeramente más abajo y a la izquierda */
+    transition-delay: 0.10s;
+}
+
+.bubble-menu-container.open .bubble-menu-item:nth-child(3) {
+    transform: translate(-180px, 60px) scale(1); /* Más abajo y a la izquierda */
+    transition-delay: 0.15s;
+}
+
+.bubble-menu-container.open .bubble-menu-item:nth-child(4) {
+    transform: translate(-190px, 110px) scale(1); /* Ángulo más pronunciado */
+    transition-delay: 0.20s;
+}
+
+.bubble-menu-container.open .bubble-menu-item:nth-child(5) {
+    transform: translate(-180px, 170px) scale(1); /* Curva de regreso */
+    transition-delay: 0.25s;
+}
+
+.bubble-menu-container.open .bubble-menu-item:nth-child(6) {
+    transform: translate(-150px, 220px) scale(1); /* Último elemento más hacia el centro */
+    transition-delay: 0.30s;
+}
+/* No hay media query aquí, ya que la eliminamos para visibilidad en todas las pantallas */

@@ -1,0 +1,32 @@
+/* src/styles/animations.css */
+
+.viaje-animado-container {
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s ease;
+  padding: 0 0.5rem;
+}
+
+.text-viaje {
+  color: #002D62;
+  transition: all 0.4s ease;
+}
+
+.anim-road {
+  background-color: transparent;
+  background-image: linear-gradient(to right, transparent 50%, white 50%);
+  background-size: 50px 100%;
+  transform: translateY(1.5rem);
+  opacity: 0;
+}
+
+.anim-car {
+  width: 2rem;
+  height: 1rem;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23FFFFFF"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h2v-2h16v2h2v-6c0-1.66-1.34-3-3-3zm-3 7H8v-2h8v2zm3-4c-1.11 0-2-.89-2-2s.89-2 2-2 2 .89 2 2-.89 2-2 2zM7 9c-1.11 0-2-.89-2-2s.89-2 2-2 2 .89 2 2-.89 2-2 2z"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 50%;
+  transform: translateY(0.5rem);
+  opacity: 0;
+}
