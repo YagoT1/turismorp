@@ -1,10 +1,11 @@
-// src/components/Card.jsx
-
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Card = ({ title, description, image, linkText, linkUrl, instagramUrl, facebookUrl, mapsUrl }) => {
-  return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+const Card = ({ title, description, image, linkTo, linkText, linkUrl, instagramUrl, facebookUrl, mapsUrl }) => {
+  const isInternalLink = !!linkTo; // Verifica si la propiedad linkTo existe
+
+  const CardContent = (
+    <>
       <img src={image} alt={title} className="w-full h-48 object-cover" />
       <div className="p-4">
         <h3 className="text-xl font-bold text-[#002D62] mb-2">{title}</h3>
@@ -26,15 +27,15 @@ const Card = ({ title, description, image, linkText, linkUrl, instagramUrl, face
 
         {/* Agregamos el botón "Cómo llegar" */}
         {mapsUrl && (
-            <a 
-              href={mapsUrl} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="inline-block bg-blue-500 text-white py-2 px-4 rounded-full text-sm font-semibold hover:bg-blue-600 transition-colors duration-200"
-            >
-              Cómo llegar
-            </a>
-          )}
+          <a 
+            href={mapsUrl} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="inline-block bg-blue-500 text-white py-2 px-4 rounded-full text-sm font-semibold hover:bg-blue-600 transition-colors duration-200"
+          >
+            Cómo llegar
+          </a>
+        )}
 
         {linkText && linkUrl && (
           <a
@@ -47,6 +48,19 @@ const Card = ({ title, description, image, linkText, linkUrl, instagramUrl, face
           </a>
         )}
       </div>
+    </>
+  );
+
+  return isInternalLink ? (
+    <Link 
+      to={linkTo} 
+      className="bg-white rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+    >
+      {CardContent}
+    </Link>
+  ) : (
+    <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+      {CardContent}
     </div>
   );
 };

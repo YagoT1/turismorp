@@ -4,7 +4,7 @@ import React from 'react';
 
 const HistoriaCompleta = () => {
   return (
-    <div className="bg-gray-100 text-gray-800 pt-28 pb-20 px-6">
+    <div className="bg-gray-100 text-gray-800 pt-32 pb-20 px-6">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-5xl md:text-6xl font-bold mb-8 text-center text-[#0e2133]">
           Historia de Roque Pérez

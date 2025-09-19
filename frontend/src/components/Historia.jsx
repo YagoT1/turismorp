@@ -1,10 +1,20 @@
 // src/components/Historia.jsx
 
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useRef } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import ModalImage from "react-modal-image";
 
 const Historia = () => {
+  const navigate = useNavigate();
+  const linkRef = useRef(null);
+
+  useEffect(() => {
+    if (linkRef.current) {
+      // Simula un clic en el enlace para activar el scroll
+      linkRef.current.click();
+    }
+  }, []);
+
   return (
     // Se mantiene el color de fondo celeste y la posición relativa para el SVG
     <section 

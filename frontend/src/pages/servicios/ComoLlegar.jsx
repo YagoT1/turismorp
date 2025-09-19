@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
-import '../assets/styles/animations.css'; 
+import '../../assets/styles/animations.css'; 
 
 const mapApiKey = 'AIzaSyANFFrsE2iF-GeJdOWyXruLLRuKhIaPVeI'; 
 

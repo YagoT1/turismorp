@@ -2,8 +2,8 @@
 
 import Hero from '../components/Hero';
 import Historia from '../components/Historia';
-import QueVisitar from '../pages/QueVisitar';
-import ComoLlegar from '../pages/ComoLlegar';
+import QueVisitar from './servicios/QueVisitar';
+import ComoLlegar from './servicios/ComoLlegar';
 
 const Home = () => {
   return (

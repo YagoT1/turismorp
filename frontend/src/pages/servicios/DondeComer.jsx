@@ -1,7 +1,7 @@
 // src/pages/DondeComer.jsx
 
 import React, { useEffect } from 'react';
-import Card from '../components/Tarjeta';
+import Card from '../../components/Tarjeta';
 
 const foodSections = {
   "Parrillas": [
